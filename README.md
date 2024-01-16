@@ -23,7 +23,7 @@
     </section>
 
     <footer>
-        &copy; 2024 Your Name. All rights reserved.
+        @2024 Suhas Panuganti. All rights reserved
     </footer>
 </body>
 </html>
