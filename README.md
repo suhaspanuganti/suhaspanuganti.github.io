@@ -7,27 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>My introduction Website</h1>
-    </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section>
-        <h2>Welcome to My Professional Website</h2>
-        <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
-    </section>
-
-    <footer>
-        @2024 Suhas Panuganti. All rights reserved
-    </footer>
-</body>
-</html>
-body {
+    <style>body {
     font-family: 'Arial', sans-serif;
     margin: 40px;
     line-height: 1.6;
@@ -69,5 +49,26 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em;
-}
+}</style>
+    <header>
+        <h1>My introduction Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to My Professional Website</h2>
+        <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
+    </section>
+
+    <footer>
+        @2024 Suhas Panuganti. All rights reserved
+    </footer>
+</body>
+</html>
+
 
