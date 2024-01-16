@@ -57,19 +57,6 @@ footer {
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        nav {
-    display: flex;
-    justify-content: center;
-    background-color: #f4f4f4;
-    padding: 1em;
-}
-
-nav a {
-    margin: 0 1em;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
     </nav>
 
     <section>
