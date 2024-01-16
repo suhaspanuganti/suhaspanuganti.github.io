@@ -1,2 +1,71 @@
-# suhaspanuganti.github.io
-This is an introductory page of Suhas Panuganti 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 1em;
+}
+
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+section {
+    margin: 2em 0;
+}
+
+footer {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Professional Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Professional Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to My Professional Website</h2>
+        <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+    </footer>
+</body>
+</html>
