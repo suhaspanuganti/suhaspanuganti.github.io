@@ -12,7 +12,7 @@
     margin: 40px;
     line-height: 1.6;
     color: #333;
-    background-color: #007BFF; /* Blue background color */
+    background-color: #000000; /* Blue background color */
 }
 
 header {
