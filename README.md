@@ -52,21 +52,20 @@ footer {
     <header>
         <h1>My introduction Website</h1>
     </header>
-
-    <nav>
+<nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section>
+<section>
         <h2>Welcome to My Professional Website</h2>
         <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
     </section>
 
-    <footer>
+<footer>
         @2024 Suhas Panuganti. All rights reserved
-    </footer>
+ </footer>
 </body>
 </html>
 
