@@ -11,7 +11,7 @@
     margin: 40px;
     line-height: 1.6;
     color: #333;
-    background-color: #000000; /* Blue background color */
+    background-color: #FFCCCB; /* Blue background color */
 }
 
 header {
@@ -52,16 +52,15 @@ footer {
     <header>
         <h1>My introduction Website</h1>
     </header>
+<section>
+        <h2>Welcome to My Professional Website</h2>
+        <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
+    </section>
 <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
-
-<section>
-        <h2>Welcome to My Professional Website</h2>
-        <p>This website is designed to showcase my professional portfolio and achievements. Feel free to explore!</p>
-    </section>
 
 <footer>
         @2024 Suhas Panuganti. All rights reserved
