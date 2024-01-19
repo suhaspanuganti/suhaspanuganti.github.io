@@ -4,160 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Introductory Website</title>
+    <title>Suhas Panuganti</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-            color: #333;
-            overflow: hidden; /* Hide the overflowing content */
-        }
-
-        #video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1; /* Place the video behind other elements */
-        }
-
-        header {
-            background-color: transparent; /* Make the header transparent */
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            z-index: 1; /* Place the header above the video */
-        }
-
-        h1 {
-            font-family: 'American Typewriter', serif; /* Change font for h1 */
-        }
-
-        section {
-            margin: 2em 0;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: #fff;
-        }
-
-        .resume-button-container {
-            text-align: center;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .resume-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff; /* Add white border */
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.resume-button:hover {
-    background-color: #006400;
-}
-
-
-       nav {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 1;
-}
-
-nav {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 1;
-}
-
-nav a {
-    display: inline-block;
-    margin: 0 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: ;
-    padding: 10px 15px;
-    border-radius: 15px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #0056b3;
-}
-
-footer {
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    right: 0; /* Align to the right */
-    margin-bottom: 20px; /* Adjusted margin to create space between nav and footer */
-    z-index: 1;
-}
-
-
-
-        nav img {
-            max-height: 30px;
-            vertical-align: middle;
-        }
-/* ... (existing styles) */
-
-section {
-    margin: 2em 0;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-    opacity: 0; /* Set initial opacity to 0 */
-    animation: fadeIn 1s ease-in-out 1.0s forwards; /* Animation properties */
-}
-
-/* ... (existing styles) */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+   <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 40px;
+        line-height: 1.6;
+        color: #333;
+        overflow: hidden;
     }
-    to {
-        opacity: 1;
+
+    #video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
     }
-}
+
+    header {
+        background-color: transparent;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+        z-index: 1;
+    }
+
+    h1 {
+        font-family: 'American Typewriter', serif;
+        font-size: 3em;
+        color: #fff;
+        opacity: 0; /* Set initial opacity to 0 */
+        animation: fadeIn 1.0s ease-in-out 0.7s forwards; /* Fade-in animation with 0.5s duration */
+        position: relative;
+        z-index: 1;
+    }
+
+    h1::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        color: #000;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+    }
+
+    section {
+        margin: 2em 0;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+        opacity: 0; /* Set initial opacity to 0 */
+        animation: fadeIn 1s ease-in-out 1.5s forwards; /* Fade-in animation with 1s duration */
+    }
+
+    .resume-button-container {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .resume-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #;
+        color: #fff;
+        text-decoration: none;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        font-weight: bold;
+        opacity: 0; /* Set initial opacity to 0 */
+        animation: fadeIn 1s ease-in-out 2.7s forwards; /* Fade-in animation with 1s duration at 2.0s */
+        transition: background-color 0.3s ease;
+    }
+
+    .resume-button:hover {
+        background-color: #006400;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 10px;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #0056b3;
+    }
+
+    footer {
+        background-color: transparent;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 20px;
+        z-index: 1;
+        opacity: 0; /* Set initial opacity to 0 */
+        animation: fadeIn 1s ease-in-out 4.0s forwards; /* Fade-in animation with 1s duration at 2.0s */
+    }
+
+    nav img {
+        max-height: 30px;
+        vertical-align: middle;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
 
 
-    </style>
+
+    
 </head>
 
 <body>
     <video id="video-background" autoplay muted loop>
         <source src="https://github.com/suhaspanuganti/suhaspanuganti.github.io/raw/main/page_background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
 
     <header>
-        <h1>My Introduction Website</h1>
+        <h1>Suhas Panuganti</h1>
     </header>
 
     <section>
