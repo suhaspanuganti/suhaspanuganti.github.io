@@ -114,14 +114,21 @@
             margin: 0 10px;
             text-decoration: none;
             color: #fff;
-            padding: 10px 15px;
-            border-radius: 15px;
+            padding: 5px 5px;
+            border-radius: 10px;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
 
         nav a:hover {
             background-color: #0056b3;
+        }
+
+        .contact-header {
+            color: #fff; /* White color */
+            font-size: 1.0em;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 3.0s forwards; /* Fade-in animation with 1s duration at 3.0s */
         }
 
         footer {
@@ -178,6 +185,7 @@
     </div>
 
     <nav>
+        <p class="contact-header">Contact me @</p>
         <a href="https://www.linkedin.com/in/suhaskumar2308/" target="_blank"><img
                 src="https://www.freepnglogos.com/uploads/linkedin-logo-hd-png-3.png" alt="LinkedIn Logo"></a>
         <a href="https://discord.gg/my3UXRwESB" target="_blank"><img
