@@ -12,100 +12,123 @@
             margin: 40px;
             line-height: 1.6;
             color: #333;
-            background: url('https://th.bing.com/th/id/R.ea80e8bcf70c0a180cdc6905afb3f1c1?rik=AOnT7YkygFDSYg&riu=http%3a%2f%2fbackgroundcheckall.com%2fwp-content%2fuploads%2f2017%2f12%2fwebsite-background-design.jpg&ehk=wPsIeo20SzI7GQwdyLJG6CMUKL9Awn4f6CnGiNdUxJg%3d&risl=&pid=ImgRaw&r=0') center center fixed; /* Set background image */
-            background-size: cover; /* Cover the entire viewport */
-            background-color: #008080; /* Fallback background color in case the image fails to load */
+            overflow: hidden; /* Hide the overflowing content */
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; /* Place the video behind other elements */
         }
 
         header {
-            background-color: ;
-            color: #000000;
+            background-color: transparent; /* Make the header transparent */
+            color: #fff;
             padding: 1em;
             text-align: center;
+            z-index: 1; /* Place the header above the video */
         }
 
         h1 {
             font-family: 'American Typewriter', serif; /* Change font for h1 */
         }
 
-        h2 {
-            color: #000000; /* Set color for h2 */
-        }
-
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #fff; /* White text color for headings */
-            transition: color 0.3s ease; /* Hover effect transition */
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color:;
-            padding: 1em;
-        }
-
-        nav a {
-            margin: 0 1em;
-            text-decoration: none;
-            color: #000; /* Black text color for links */
-            background-color: ; /* White background color for links */
-            padding: 5px 5px;
-            border: none; /* Black border for button-like appearance */
-            border-radius: 15px;
-            font-weight: bold;
-            display: inline-block; /* Make them inline-block elements */
-            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Hover effect transition */
-        }
-
-        nav a:hover {
-            color: #fff; /* Hover text color for links */
-            background-color: #007BFF; /* Hover background color for links */
-            border-color: #007BFF; /* Hover border color for links */
-        }
-
         section {
             margin: 2em 0;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
         }
 
         .resume-button-container {
-            text-align: center; /* Center the button */
-            margin-top: 30px; /* Add space above the button */
-            margin-bottom: 30px; /* Add space below the button */
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .resume-button {
-            display: inline-block; /* Inline block instead of block */
+            display: inline-block;
             padding: 10px 20px;
-            background-color: #008000; /* Green button color */
+            background-color: #008000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold; /* Bold font */
-            transition: background-color 0.3s ease; /* Button hover effect transition */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         .resume-button:hover {
-            background-color: #006400; /* Darker green on hover */
+            background-color: #006400;
         }
 
-        footer {
-            background-color:;
-            color: #fff;
-            text-align: right;
-            padding: 1em;
-        }
+       nav {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+nav {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: ;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Align to the right */
+    margin-bottom: 20px; /* Adjusted margin to create space between nav and footer */
+    z-index: 1;
+}
+
+
 
         nav img {
-            max-height: 30px; /* Adjust the max height as needed */
-            vertical-align: middle; /* Align the image vertically within the line */
+            max-height: 30px;
+            vertical-align: middle;
         }
     </style>
 </head>
 
 <body>
+    <video id="video-background" autoplay muted loop>
+        <source src="https://github.com/suhaspanuganti/suhaspanuganti.github.io/raw/main/page_background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <header>
         <h1>My Introduction Website</h1>
@@ -118,19 +141,30 @@
     </section>
 
     <div class="resume-button-container">
-        <a href="https://github.com/suhaspanuganti/suhaspanuganti.github.io/blob/main/Suhas_Resume.pdf" target="_blank" class="resume-button">Download Resume</a>
+        <a href="https://github.com/suhaspanuganti/suhaspanuganti.github.io/blob/main/Suhas_Resume.pdf" target="_blank"
+            class="resume-button">Download Resume</a>
     </div>
 
     <nav>
-        <a href="https://www.linkedin.com/in/suhaskumar2308/" target="_blank"><img src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent-png-25.png" alt="LinkedIn Logo"></a>
-        <a href="https://discord.gg/my3UXRwESB" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord Logo"></a>
-        <a href="mailto:chintusuhas2308@gmail.com" style="max-height: 40px;"><img src="https://th.bing.com/th/id/OIP.A1l20wxJwyPkNcoFkBWb_wHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7" alt="Gmail Logo"></a>
+        <a href="https://www.linkedin.com/in/suhaskumar2308/" target="_blank"><img
+                src="https://www.freepnglogos.com/uploads/linkedin-logo-hd-png-3.png" alt="LinkedIn Logo"></a>
+        <a href="https://discord.gg/my3UXRwESB" target="_blank"><img
+                src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord Logo"></a>
+        <a href="mailto:chintusuhas2308@gmail.com" style="max-height: 40px;"><img
+                src="https://www.logolynx.com/images/logolynx/64/64319177556c729f1806922bcd3adef5.png"
+                alt="Gmail Logo"></a>
     </nav>
 
     <footer>
         &copy; 2024 Suhas Panuganti. All rights reserved
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('video-background');
+            video.play();
+        });
+    </script>
 </body>
 
 </html>
