@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,9 +39,10 @@
             font-size: 3em;
             color: #fff;
             opacity: 0;
-            animation: fadeIn 1.0s ease-in-out 0.7s forwards;
             position: relative;
             z-index: 1;
+            display: inline-block;
+            animation: fadeIn 1.0s ease-in-out 0.7s forwards;
         }
 
         h1::before {
@@ -54,6 +56,12 @@
             background-clip: text;
             color: transparent;
             display: inline-block;
+            border: 2px solid #fff; /* White outline */
+            box-sizing: border-box;
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1s forwards; /* Fade-in animation with 1s duration at 1s */
         }
 
         section {
@@ -155,7 +163,7 @@
     </video>
 
     <header>
-        <h1>Suhas Panuganti</h1>
+        <h1 data-text="Suhas Panuganti">Suhas Panuganti</h1>
     </header>
 
     <section>
