@@ -14,11 +14,12 @@
             color: #333;
             background: url('https://th.bing.com/th/id/R.ea80e8bcf70c0a180cdc6905afb3f1c1?rik=AOnT7YkygFDSYg&riu=http%3a%2f%2fbackgroundcheckall.com%2fwp-content%2fuploads%2f2017%2f12%2fwebsite-background-design.jpg&ehk=wPsIeo20SzI7GQwdyLJG6CMUKL9Awn4f6CnGiNdUxJg%3d&risl=&pid=ImgRaw&r=0') center center fixed; /* Set background image */
             background-size: cover; /* Cover the entire viewport */
+            background-color: #008080; /* Fallback background color in case the image fails to load */
         }
 
         header {
-            background-color: #007BFF;
-            color: #fff;
+            background-color: ;
+            color: #000000;
             padding: 1em;
             text-align: center;
         }
@@ -50,10 +51,10 @@
             margin: 0 1em;
             text-decoration: none;
             color: #000; /* Black text color for links */
-            #background-color:#fff ; /* White background color for links */
+            background-color: ; /* White background color for links */
             padding: 5px 5px;
             border: none; /* Black border for button-like appearance */
-            border-radius: 10px;
+            border-radius: 15px;
             font-weight: bold;
             display: inline-block; /* Make them inline-block elements */
             transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Hover effect transition */
@@ -63,7 +64,6 @@
             color: #fff; /* Hover text color for links */
             background-color: #007BFF; /* Hover background color for links */
             border-color: #007BFF; /* Hover border color for links */
-	    paading : 5px 5px
         }
 
         section {
@@ -88,13 +88,13 @@
         }
 
         .resume-button:hover {
-            background-color: #008080; /* Darker green on hover */
+            background-color: #006400; /* Darker green on hover */
         }
 
         footer {
-            background-color:none;
+            background-color:;
             color: #fff;
-            text-align:right;
+            text-align: right;
             padding: 1em;
         }
 
@@ -122,7 +122,6 @@
     </div>
 
     <nav>
-	
         <a href="https://www.linkedin.com/in/suhaskumar2308/" target="_blank"><img src="https://www.freepnglogos.com/uploads/linkedin-logo-transparent-png-25.png" alt="LinkedIn Logo"></a>
         <a href="https://discord.gg/my3UXRwESB" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord Logo"></a>
         <a href="mailto:chintusuhas2308@gmail.com" style="max-height: 40px;"><img src="https://th.bing.com/th/id/OIP.A1l20wxJwyPkNcoFkBWb_wHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7" alt="Gmail Logo"></a>
