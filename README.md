@@ -55,19 +55,21 @@
         }
 
         .resume-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #008000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff; /* Add white border */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-        .resume-button:hover {
-            background-color: #006400;
-        }
+.resume-button:hover {
+    background-color: #006400;
+}
+
 
        nav {
     position: fixed;
@@ -121,6 +123,30 @@ footer {
             max-height: 30px;
             vertical-align: middle;
         }
+/* ... (existing styles) */
+
+section {
+    margin: 2em 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeIn 1s ease-in-out 1.0s forwards; /* Animation properties */
+}
+
+/* ... (existing styles) */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
     </style>
 </head>
 
