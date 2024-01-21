@@ -175,7 +175,7 @@
 
         /* Styling for the introduction image */s
         .introduction-image {
-            max-width: 100%;
+            max-width: 28%;
             height: auto;
             border-radius: 30px; /* Optional: Add border-radius for a rounded look */
         }
