@@ -222,8 +222,9 @@ text-align:center  ;
     </header>
 
     <section>
-        <img src="https://raw.githack.com/suhaspanuganti/suhaspanuganti.github.io/main/graduation_day_main_png.jpg""
-            alt="Description of your image" class="introduction-image">
+        <img src="https://raw.githack.com/suhaspanuganti/suhaspanuganti.github.io/main/graduation_day_main_png.jpg"
+     alt="Description of your image" class="introduction-image">
+
         <h2>Welcome to Suhas Panuganti's World of Technology and Beyond!
         </h2>
         <p class="leftt-text">
