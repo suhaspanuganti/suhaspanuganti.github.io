@@ -177,8 +177,7 @@
         .introduction-image {
     max-width: 28%;
     height: auto;
-    border-radius: 10px; /* Optional: Add border-radius for a rounded look */
-}
+    border-radius: 10px; /* Optional: Add border-radius for a rounded look */}
 
 }
 .midtext-text{
