@@ -174,12 +174,12 @@
 
         /* Styling for the introduction image */s
         .introduction-image {
-            max-width: 100%;
-            height: auto;
+            max-width: 28%;
+            height: 30px;
             border-radius: 30px; /* Optional: Add border-radius for a rounded look */
         }.introduction-image {
             max-width: 28%;
-            height: auto;
+            height: 400px;
             border-radius: 10px; /* Optional: Add border-radius for a rounded look */}
             .midtext-text{
             font-size: 1.5em;
