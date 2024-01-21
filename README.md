@@ -175,10 +175,14 @@
 
         /* Styling for the introduction image */s
         .introduction-image {
-    max-width: 28%;
-    height: auto;
-    border-radius: 10px; /* Optional: Add border-radius for a rounded look */}
-
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px; /* Optional: Add border-radius for a rounded look */
+        }
+.introduction-image {
+            max-width: 28%;
+            height: auto;
+            border-radius: 10px; /* Optional: Add border-radius for a rounded look */
 }
 .midtext-text{
 font-size: 1.5em;
@@ -218,8 +222,8 @@ text-align:center  ;
     </header>
 
     <section>
-        <img src="https://raw.githack.com/suhaspanuganti/suhaspanuganti.github.io/main/graduation_day_main_png.jpg"
-     alt="Description of your image" class="introduction-image">
+        <img src="https://raw.githubusercontent.com/suhaspanuganti/suhaspanuganti.github.io/main/gradday_ccrop.jpg" alt="Description of your image" class="introduction-image">
+
 
         <h2>Welcome to Suhas Panuganti's World of Technology and Beyond!
         </h2>
