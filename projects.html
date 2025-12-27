@@ -423,14 +423,17 @@ ul{margin:10px 0 0 18px}
            </div>
 
            <video
-             autoplay
-             muted
-             loop
-             playsinline
-             preload="metadata"
-             style="width:100%; border-radius:14px; border:1px solid rgba(255,255,255,0.14); background:rgba(0,0,0,0.25);">
-       <source src="nlp_project_output.mp4" type="video/mp4">
-     </video>
+           id="demoVideo"
+           autoplay
+           muted
+           loop
+           playsinline
+           preload="auto"
+           style="width:100%; border-radius:14px; border:1px solid rgba(255,255,255,0.14); background:rgba(0,0,0,0.25);">
+  <source src="./nlp_project_output.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
   <div class="small" style="margin-top:10px;">
   </div>
@@ -488,9 +491,27 @@ ul{margin:10px 0 0 18px}
       </div>
 
       <div class="card reveal">
-        <p><b>Position it simply:</b></p>
-        <p class="small">“Independent study report on applying GenAI to cash-flow insight extraction in FinTech.”</p>
-      </div>
+  <p><b>Position it simply:</b></p>
+  <p class="small">“Independent study report on applying GenAI to cash-flow insight extraction in FinTech.”</p>
+
+  <div class="media-box" style="margin-top:12px;">
+    <b>Research Report Preview</b>
+    <div class="small" style="margin:8px 0 10px;">
+      Embedded PDF preview (scroll inside). If it doesn’t load on mobile, use the open button.
+    </div>
+
+    <iframe
+      src="cash_flow_report.pdf#view=FitH"
+      style="width:100%; height:360px; border-radius:14px; border:1px solid rgba(255,255,255,0.14); background:rgba(0,0,0,0.25);"
+      loading="lazy">
+    </iframe>
+
+    <a class="btn" href="cash_flow_report.pdf" target="_blank" rel="noopener noreferrer">
+      Open PDF
+    </a>
+  </div>
+</div>
+
     </div>
   </section>
 
@@ -672,15 +693,27 @@ ul{margin:10px 0 0 18px}
     document.body.classList.toggle("theme-intel");
   });
 
-  /* Force autoplay if browser blocks it (muted helps) */
-  window.addEventListener("load", () => {
+  /* Strong autoplay helper */
+  window.addEventListener("load", async () => {
     const v = document.querySelector("#p1 video");
-    if (v) v.play().catch(()=>{});
+    if (!v) return;
+
+    v.muted = true;        // ensure it's REALLY muted
+    v.playsInline = true;
+
+    try {
+      await v.play();
+    } catch (e) {
+      // if autoplay still blocked, show controls so user can start it
+      v.setAttribute("controls", "controls");
+    }
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
