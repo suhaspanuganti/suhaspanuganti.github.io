@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suhas Panuganti | Experience</title>
+
+<style>
+/* =========================================================
+   THEMES — Crimson Target ↔ Charcoal ↔ Emerald (Green)
+   ========================================================= */
+
+/* THEME 1: Crimson Target (Dark Red Achievement) */
+body.theme-intel{
+  --bg1:#14090c;                 /* deep wine */
+  --bg2:#2a0f15;                 /* dark crimson */
+  --accent:#b11226;              /* controlled red */
+  --accentSoft:rgba(177,18,38,0.16);
+  --accentStroke:rgba(177,18,38,0.46);
+  --topbar: rgba(20,10,12,.75);
+  --glow: rgba(255,40,40,0.22);
+}
+
+/* THEME 2: Charcoal Target (neutral) */
+body.theme-maroon{
+  --bg1:#0e0e10;
+  --bg2:#1a1a1f;
+  --accent:#b11226;
+  --accentSoft:rgba(177,18,38,0.14);
+  --accentStroke:rgba(255,255,255,0.22);
+  --topbar: rgba(14,14,16,.78);
+  --glow: rgba(255,40,40,0.18);
+}
+
+/* THEME 3: Emerald Target (greenish professional) */
+body.theme-emerald{
+  --bg1:#07110d;                 /* deep green-black */
+  --bg2:#0b1c14;                 /* forest charcoal */
+  --accent:#18a46f;              /* emerald */
+  --accentSoft:rgba(24,164,111,0.16);
+  --accentStroke:rgba(24,164,111,0.48);
+  --topbar: rgba(7,17,13,.78);
+  --glow: rgba(50,255,170,0.18);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+:root{
+  --card:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.66);
+  --stroke:rgba(255,255,255,0.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color: var(--text);
+  background:
+    radial-gradient(900px 520px at 18% 12%, var(--accentSoft), transparent 60%),
+    radial-gradient(900px 520px at 82% 20%, rgba(255,255,255,0.04), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  overflow:hidden;
+}
+
+/* Matte grain */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity:.07;
+  pointer-events:none;
+}
+
+/* =========================================================
+   TARGET BOARD BACKGROUND (colored + animated)
+   ========================================================= */
+.data-bg{
+  position:fixed;
+  inset:0;
+  z-index:-4;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* Target board (actual rings) */
+.data-bg::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  left:-15%;
+  top:-10%;
+
+  /* colored rings (accent + white) */
+  background:
+    radial-gradient(circle at 32% 42%,
+      rgba(255,255,255,0.22) 0 58px,
+      color-mix(in oklab, var(--accent) 55%, transparent) 58px 118px,
+      rgba(255,255,255,0.18) 118px 178px,
+      color-mix(in oklab, var(--accent) 45%, transparent) 178px 250px,
+      rgba(255,255,255,0.12) 250px 330px,
+      color-mix(in oklab, var(--accent) 35%, transparent) 330px 420px,
+      transparent 420px 100%
+    ),
+    radial-gradient(600px 600px at 32% 42%,
+      rgba(0,0,0,0.35), transparent 60%);
+
+  filter: blur(0.2px);
+  opacity: 0.85;
+  transform: rotate(-6deg) scale(1.02);
+  animation: targetDrift 14s ease-in-out infinite;
+}
+
+/* Glow + subtle scan shimmer */
+.data-bg::after{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  background:
+    radial-gradient(520px 520px at 32% 42%, var(--glow), transparent 65%),
+    radial-gradient(520px 520px at 72% 68%, rgba(255,255,255,0.05), transparent 70%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.00) 0px,
+      rgba(255,255,255,0.00) 22px,
+      rgba(255,255,255,0.03) 24px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  animation: targetPulse2 7s ease-in-out infinite, shimmerSlide 10s linear infinite;
+}
+
+@keyframes targetDrift{
+  0%   { transform: translate3d(0,0,0) rotate(-6deg) scale(1.02); opacity:0.72; }
+  50%  { transform: translate3d(14px,10px,0) rotate(6deg) scale(1.05); opacity:0.90; }
+  100% { transform: translate3d(0,0,0) rotate(-6deg) scale(1.02); opacity:0.72; }
+}
+
+@keyframes targetPulse2{
+  0%   { opacity:0.38; filter: blur(0px); }
+  50%  { opacity:0.70; filter: blur(0.3px); }
+  100% { opacity:0.38; filter: blur(0px); }
+}
+
+@keyframes shimmerSlide{
+  0%   { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 0 0, 0 0, 240px 0; }
+}
+
+/* =========================================================
+   PROFESSIONAL TROPHIES (SVG silhouettes, stacked)
+   ========================================================= */
+.trophy-bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* Container to place trophies on the right */
+.trophy-stack{
+  position:absolute;
+  right:-40px;
+  top:50%;
+  transform:translateY(-50%);
+  width:min(520px, 55vw);
+  height:min(720px, 72vh);
+}
+
+/* Base trophy styling */
+.trophy-svg{
+  position:absolute;
+  width:100%;
+  height:auto;
+  opacity:0.10;
+  filter: blur(0.4px);
+  mix-blend-mode: screen;
+  animation: trophyFloat 18s ease-in-out infinite;
+}
+
+/* Back trophy (largest, most faded) */
+.trophy-svg.back{
+  top:4%;
+  right:6%;
+  transform: rotate(10deg) scale(1.06);
+  opacity:0.06;
+  animation-duration:26s;
+}
+
+/* Middle trophy */
+.trophy-svg.mid{
+  top:22%;
+  right:2%;
+  transform: rotate(6deg) scale(1.00);
+  opacity:0.08;
+  animation-duration:22s;
+}
+
+/* Front trophy (sharpest of the three, still subtle) */
+.trophy-svg.front{
+  top:40%;
+  right:0%;
+  transform: rotate(2deg) scale(0.94);
+  opacity:0.10;
+  animation-duration:18s;
+}
+
+/* Trophy fill uses accent tint */
+.trophy-svg path,
+.trophy-svg rect,
+.trophy-svg circle{
+  fill: color-mix(in oklab, var(--accent) 40%, rgba(255,255,255,0.90));
+}
+
+/* Gentle float */
+@keyframes trophyFloat{
+  0%   { translate: 0 0; }
+  50%  { translate: 0 -18px; }
+  100% { translate: 0 0; }
+}
+
+/* =========================================================
+   TOP BAR + TABS
+   ========================================================= */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(16px);
+  background: var(--topbar);
+  border-bottom:1px solid var(--stroke);
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px 6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.header h1{font-size:20px;margin:0;letter-spacing:.2px}
+.header .mini{color: var(--muted);font-size: 13px;margin-top:2px}
+
+.actions{display:flex;gap:10px;align-items:center}
+.btn-pill{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  text-decoration:none;
+}
+.btn-pill.accent{
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+}
+
+.tabs{
+  max-width:1100px;
+  margin:auto;
+  padding:8px 12px 14px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.05);
+  color:var(--muted);
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  white-space:nowrap;
+}
+.tab.active{
+  color:var(--text);
+  background:var(--accentSoft);
+  border-color:var(--accentStroke);
+}
+
+/* =========================================================
+   SCROLL SNAP SECTIONS
+   ========================================================= */
+.scroller{
+  height:calc(100vh - 104px);
+  overflow-y:auto;
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
+}
+section{
+  min-height:calc(100vh - 104px);
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 16px;
+}
+.container{
+  width:min(1100px,100%);
+  display:grid;
+  grid-template-columns:1.65fr 1fr;
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:22px;
+  padding:26px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+h2{margin:0 0 10px;font-size:26px;letter-spacing:.2px}
+h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:4px;
+  margin-top:10px;
+  background:var(--accent);
+  border-radius:999px;
+}
+.meta{color:var(--muted);font-weight:800;font-size:13px;margin-bottom:10px}
+p,li{color:var(--muted);line-height:1.7}
+ul{margin:10px 0 0 18px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badge{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  padding:7px 10px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:12px;
+  opacity:.92;
+}
+.badge.accent{border-color:var(--accentStroke);background:var(--accentSoft)}
+.small{font-size:13px;color:var(--muted)}
+.note{border-left:4px solid var(--accent);padding-left:12px;margin-top:12px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);filter:blur(6px);transition:.6s ease}
+.reveal.show{opacity:1;transform:none;filter:none}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+  .trophy-stack{display:none;} /* optional: hide trophies on small screens */
+}
+</style>
+</head>
+
+<body class="theme-intel">
+  <div class="data-bg" aria-hidden="true"></div>
+
+  <!-- Professional trophy silhouettes (3 stacked) -->
+  <div class="trophy-bg" aria-hidden="true">
+    <div class="trophy-stack">
+      <svg class="trophy-svg back" viewBox="0 0 256 256" aria-hidden="true">
+        <path d="M76 32h104c4 0 8 4 8 8v28c0 34-23 63-54 71v17h22c4 0 8 3 8 8v14c0 5-4 10-10 10H94c-6 0-10-5-10-10v-14c0-5 4-8 8-8h22v-17c-31-8-54-37-54-71V40c0-4 4-8 8-8z"/>
+        <path d="M54 52H30c-6 0-10 4-10 10v10c0 28 19 52 45 58 4 1 8-2 8-6V52c0-4-3-7-7-7z"/>
+        <path d="M202 52h24c6 0 10 4 10 10v10c0 28-19 52-45 58-4 1-8-2-8-6V52c0-4 3-7 7-7z"/>
+        <path d="M92 208h72c6 0 10 4 10 10v6c0 6-4 10-10 10H92c-6 0-10-4-10-10v-6c0-6 4-10 10-10z"/>
+        <path d="M104 188h48v20h-48z"/>
+      </svg>
+
+      <svg class="trophy-svg mid" viewBox="0 0 256 256" aria-hidden="true">
+        <path d="M76 32h104c4 0 8 4 8 8v28c0 34-23 63-54 71v17h22c4 0 8 3 8 8v14c0 5-4 10-10 10H94c-6 0-10-5-10-10v-14c0-5 4-8 8-8h22v-17c-31-8-54-37-54-71V40c0-4 4-8 8-8z"/>
+        <path d="M54 52H30c-6 0-10 4-10 10v10c0 28 19 52 45 58 4 1 8-2 8-6V52c0-4-3-7-7-7z"/>
+        <path d="M202 52h24c6 0 10 4 10 10v10c0 28-19 52-45 58-4 1-8-2-8-6V52c0-4 3-7 7-7z"/>
+        <path d="M92 208h72c6 0 10 4 10 10v6c0 6-4 10-10 10H92c-6 0-10-4-10-10v-6c0-6 4-10 10-10z"/>
+        <path d="M104 188h48v20h-48z"/>
+      </svg>
+
+      <svg class="trophy-svg front" viewBox="0 0 256 256" aria-hidden="true">
+        <path d="M76 32h104c4 0 8 4 8 8v28c0 34-23 63-54 71v17h22c4 0 8 3 8 8v14c0 5-4 10-10 10H94c-6 0-10-5-10-10v-14c0-5 4-8 8-8h22v-17c-31-8-54-37-54-71V40c0-4 4-8 8-8z"/>
+        <path d="M54 52H30c-6 0-10 4-10 10v10c0 28 19 52 45 58 4 1 8-2 8-6V52c0-4-3-7-7-7z"/>
+        <path d="M202 52h24c6 0 10 4 10 10v10c0 28-19 52-45 58-4 1-8-2-8-6V52c0-4 3-7 7-7z"/>
+        <path d="M92 208h72c6 0 10 4 10 10v6c0 6-4 10-10 10H92c-6 0-10-4-10-10v-6c0-6 4-10 10-10z"/>
+        <path d="M104 188h48v20h-48z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="header">
+      <div>
+        <h2>Experience</h2>
+      </div>
+      <div class="actions">
+        <button class="btn-pill accent" id="themeBtn">Theme</button>
+        <a class="btn-pill" href="index.html">← Back</a>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-id="e1">Cybersecurity</button>
+      <button class="tab" data-id="e2">GAA / GRA</button>
+      <button class="tab" data-id="e3">GTA</button>
+      <button class="tab" data-id="e4">TRIO Tutor</button>
+      <button class="tab" data-id="e5">Career Dev</button>
+      <button class="tab" data-id="e6">Internships</button>
+    </div>
+  </div>
+
+  <div class="scroller" id="scroller">
+
+    <section id="e1">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Technical Trainer — TeK Certify (Cybersecurity)</h2>
+          <div class="meta">Hyderabad, India • Jun 2023 – Nov 2023</div>
+
+          <div class="badges">
+            <span class="badge accent">Cybersecurity</span>
+            <span class="badge">Linux</span>
+            <span class="badge">Python</span>
+            <span class="badge">Bash</span>
+            <span class="badge">Labs</span>
+          </div>
+
+          <ul>
+            <li>Delivered cybersecurity training to graduate-level learners through industry-oriented skill programs for enterprise clients including <b>Microsoft</b> and <b>DSCI</b></li>
+            <li>Prepared learners for industry-recognized certifications such as <b>CCNA</b> and <b>CompTIA</b> by covering core cybersecurity concepts and ethical hacking fundamentals</li>
+            <li>Conducted extensive hands-on lab sessions using Kali Linux, penetration-testing tools, and real-world attack-defense scenarios</li>
+            <li>Delivered instruction in Linux, Python, Bash, and cybersecurity tooling aligned with certification objectives</li>
+            <li>Maintained a <b>95%</b> certification success rate across multiple cohorts</li>
+          </ul>
+
+          <div class="note small">Strong hands-on cybersecurity training with certification-focused delivery.</div>
+        </div>
+
+        <div class="card reveal">
+          <p><b>Key Strength:</b></p>
+          <p class="small">Explaining complex topics clearly and building labs that are reliable and repeatable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="e2">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Graduate Research & Administrative Assistant — ODU</h2>
+          <div class="meta">Norfolk, VA • Jan 2024 – Dec 2025</div>
+
+          <div class="badges">
+            <span class="badge accent">Automation</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Dashboards</span>
+            <span class="badge">Process Improvement</span>
+          </div>
+
+          <ul>
+            <li>Reduced manual workload by <b>70%</b> through automation</li>
+            <li>Saved <b>200+ staff hours</b> by streamlining operational workflows</li>
+            <li>Built SQL dashboards and automated reports, improving decision-making efficiency by <b>40%</b></li>
+            <li>Supported <b>500+</b> students and faculty, improving response time by <b>60%</b></li>
+          </ul>
+
+        </div>
+
+        <div class="card reveal">
+          <p><b>Signal to recruiters:</b></p>
+          <p class="small">I remove repetitive work and build systems that scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="e3">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Graduate Teaching Assistant — ODU</h2>
+          <div class="meta">Norfolk, VA • Aug 2024 – Dec 2024</div>
+
+          <div class="badges">
+            <span class="badge accent">Teaching</span>
+            <span class="badge">Mentorship</span>
+            <span class="badge">Evaluation</span>
+            <span class="badge">Automation</span>
+          </div>
+
+          <ul>
+            <li>Served as a <b>Graduate Teaching Assistant for Cryptography (Cybersecurity)</b> for both undergraduate and graduate-level courses</li>
+            <li>Clarified concepts and problem-solving approaches related to encryption algorithms and applied cryptography</li>
+            <li>Managed grading for weekly assignments and final projects across online course deliveries, ensuring consistency and accuracy</li>
+            <li>Assisted with online exam coordination and evaluation for both undergraduate and graduate sections</li>
+            <li>Developed automation scripts for grading workflows, reducing evaluation time by <b>30%</b></li>
+          </ul>
+
+        </div>
+
+        <div class="card reveal">
+          <p><b>Best framing:</b></p>
+          <p class="small">Supported instruction, evaluation, and scalable grading workflows for cryptography courses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="e4">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Student Tutor — TRIO Programs (ODU)</h2>
+          <div class="meta">Norfolk, VA • Jan 2025 - May 2025</div>
+
+          <div class="badges">
+            <span class="badge accent">Tutoring</span>
+            <span class="badge">Mentorship</span>
+            <span class="badge">Academic Support</span>
+          </div>
+
+          <ul>
+            <li>Provided academic tutoring to <b>5–8 students per week</b> through the <b>TRIO program</b> in <b>Physics, Chemistry, and Mathematics</b></li>
+            <li>Supported primarily junior and senior undergraduate students, with additional support for freshman and sophomore students as needed</li>
+            <li>Conducted one-on-one and small-group sessions to strengthen conceptual understanding and problem-solving skills</li>
+            <li>Helped students develop effective study strategies and maintain consistent academic progress</li>
+          </ul>
+
+          <div class="note small">Cross-disciplinary STEM tutoring with consistent weekly student support.</div>
+        </div>
+
+        <div class="card reveal">
+          <p><b>Focus areas:</b></p>
+          <p class="small">Concept building, problem-solving practice, and study strategy support across STEM coursework.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="e5">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Social Media Assistant — Career Development Services (ODU)</h2>
+          <div class="meta">Norfolk, VA • Mar 2024 – Aug 2024</div>
+
+          <div class="badges">
+            <span class="badge accent">Social Media</span>
+            <span class="badge">Campaigns</span>
+            <span class="badge">Engagement</span>
+            <span class="badge">Analytics</span>
+          </div>
+
+          <ul>
+            <li>Increased event engagement by <b>25%</b> through data-driven campaigns</li>
+            <li>Grew Instagram followers by <b>35%</b> in 3 months</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <p><b>Why it matters:</b></p>
+          <p class="small">Demonstrates communication skills and measurable outcomes alongside technical work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="e6">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Engineering Internships</h2>
+          <div class="meta">Hyderabad, India • 2022</div>
+
+          <div class="badges">
+            <span class="badge accent">Embedded</span>
+            <span class="badge">C#</span>
+            <span class="badge">Defense</span>
+            <span class="badge">Confidential Systems</span>
+          </div>
+
+          <ul>
+            <li><b>Defense Research and Development Laboratory (DRDL), India (Jun–Aug 2022):</b> built C# telemetry interface components; improved data processing efficiency by <b>40%</b>; supported MIL-STD-1553 integration under confidentiality constraints.</li>
+            <li><b>HBL (Oct–Dec 2022):</b> supported monitoring for proximity-fuse testing; ensured <b>100% compliance</b> with safety standards; assisted integration of electronic systems with computer-controlled defense equipment.</li>
+          </ul>
+
+          <div class="note small">Descriptions are intentionally high-level due to confidentiality requirements.</div>
+        </div>
+
+        <div class="card reveal">
+          <p><b>Core takeaway:</b></p>
+          <p class="small">Hands-on experience in controlled environments with strong attention to safety, validation, and reliability.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+<script>
+  const scroller = document.getElementById("scroller");
+  const tabs = Array.from(document.querySelectorAll(".tab"));
+
+  tabs.forEach(t=>{
+    t.addEventListener("click", ()=>{
+      const el = document.getElementById(t.dataset.id);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  const observer = new IntersectionObserver((entries)=>{
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
+    if(!visible) return;
+
+    tabs.forEach(t=>t.classList.toggle("active", t.dataset.id === visible.target.id));
+
+    visible.target.querySelectorAll(".reveal").forEach((el,i)=>{
+      setTimeout(()=>el.classList.add("show"), 80 + i*110);
+    });
+  },{root: scroller, threshold: [0.55,0.7,0.85]});
+
+  document.querySelectorAll("section").forEach(s=>observer.observe(s));
+
+  const themes = ["theme-intel", "theme-maroon", "theme-emerald"];
+  document.getElementById("themeBtn").addEventListener("click", ()=>{
+    const body = document.body;
+    const current = themes.findIndex(t => body.classList.contains(t));
+    const next = (current + 1) % themes.length;
+    themes.forEach(t => body.classList.remove(t));
+    body.classList.add(themes[next]);
+  });
+</script>
+
+</body>
+</html>

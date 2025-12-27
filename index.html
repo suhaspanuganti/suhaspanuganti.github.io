@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suhas Panuganti | Portfolio</title>
+
+<style>
+/* =========================================================
+   THEMES — Royal (dark) ↔ Warm (light)
+   ========================================================= */
+body.theme-royal{
+  --bg1:#0b1220;
+  --bg2:#0a162a;
+  --accent:#cea948;
+  --accentSoft:rgba(206,169,72,0.16);
+  --accentStroke:rgba(206,169,72,0.45);
+  --topbar: rgba(10,14,23,.72);
+
+  --card:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.66);
+  --stroke:rgba(255,255,255,0.14);
+
+  --techOpacity:0.26;
+  --techGlowOpacity:0.75;
+
+  --glow: rgba(206,169,72,0.26);
+}
+
+body.theme-warm{
+  --bg1:#f6f1e8;
+  --bg2:#efe7d7;
+  --accent:#b48722;
+  --accentSoft:rgba(180,135,34,0.14);
+  --accentStroke:rgba(20,20,20,0.18);
+  --topbar: rgba(246,241,232,.84);
+
+  --card:rgba(255,255,255,0.78);
+  --text:rgba(18,18,18,0.92);
+  --muted:rgba(18,18,18,0.68);
+  --stroke:rgba(18,18,18,0.10);
+
+  --techOpacity:0.14;
+  --techGlowOpacity:0.35;
+
+  --glow: rgba(180,135,34,0.22);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color: var(--text);
+  background:
+    radial-gradient(900px 520px at 18% 12%, var(--accentSoft), transparent 60%),
+    radial-gradient(900px 520px at 82% 20%, rgba(90,140,255,0.08), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  overflow:hidden;
+}
+
+/* matte grain */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity:.07;
+  pointer-events:none;
+}
+
+/* =========================================================
+   TECH WALLPAPER BACKGROUND (controllers + PC + microchips + books)
+   - Dark theme = white line art
+   - Warm theme = black line art
+   ========================================================= */
+.tech-bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  overflow:hidden;
+}
+.tech-bg::before{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  background:
+    radial-gradient(560px 560px at 18% 14%, var(--accentSoft), transparent 64%),
+    radial-gradient(680px 680px at 86% 68%, rgba(255,255,255,0.06), transparent 70%);
+  opacity: var(--techGlowOpacity);
+  animation: techFloat 10s ease-in-out infinite;
+}
+
+/* Dark wallpaper (WHITE strokes) */
+.tech-bg::after{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  opacity: var(--techOpacity);
+  mix-blend-mode: screen;
+  background-repeat: repeat;
+  background-size: 560px 560px;
+  background-position: 0 0;
+  filter: blur(0.1px);
+  animation: techDrift 22s linear infinite;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560'%3E%3Cg fill='none' stroke='white' stroke-opacity='.52' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- controller --%3E%3Cg transform='translate(46 58)'%3E%3Cpath d='M92 84c22-18 66-18 88 0 10 8 18 26 22 50 4 24-4 44-22 52-14 7-26-2-38-14-10-10-22-16-34-16s-24 6-34 16c-12 12-24 21-38 14-18-8-26-28-22-52 4-24 12-42 22-50z'/%3E%3Cpath d='M98 134h26M111 121v26'/%3E%3Ccircle cx='166' cy='122' r='6'/%3E%3Ccircle cx='184' cy='134' r='6'/%3E%3C/g%3E%3C!-- microchip --%3E%3Cg transform='translate(320 54)'%3E%3Crect x='46' y='46' width='120' height='120' rx='12'/%3E%3Crect x='82' y='82' width='48' height='48' rx='8'/%3E%3Cpath d='M46 26v20M72 26v20M98 26v20M124 26v20M150 26v20M166 26v20'/%3E%3Cpath d='M46 166v20M72 166v20M98 166v20M124 166v20M150 166v20M166 166v20'/%3E%3Cpath d='M26 46h20M26 72h20M26 98h20M26 124h20M26 150h20M26 166h20'/%3E%3Cpath d='M166 46h20M166 72h20M166 98h20M166 124h20M166 150h20M166 166h20'/%3E%3C/g%3E%3C!-- desktop monitor --%3E%3Cg transform='translate(52 318)'%3E%3Crect x='40' y='40' width='180' height='112' rx='12'/%3E%3Cpath d='M94 172h72'/%3E%3Cpath d='M116 152v20'/%3E%3C/g%3E%3C!-- laptop --%3E%3Cg transform='translate(320 330)'%3E%3Crect x='40' y='44' width='170' height='98' rx='10'/%3E%3Cpath d='M20 158h210'/%3E%3Cpath d='M62 146h126'/%3E%3C/g%3E%3C!-- book --%3E%3Cg transform='translate(258 214)'%3E%3Cpath d='M40 42h84a18 18 0 0 1 18 18v104a18 18 0 0 0-18-18H40z'/%3E%3Cpath d='M40 42v104a18 18 0 0 1 18 18h84'/%3E%3Cpath d='M64 72h50'/%3E%3Cpath d='M64 98h62'/%3E%3C/g%3E%3C!-- tiny circuit --%3E%3Cg opacity='.9'%3E%3Cpath d='M270 270h64'/%3E%3Cpath d='M334 270v44'/%3E%3Cpath d='M334 314h44'/%3E%3Ccircle cx='270' cy='270' r='2'/%3E%3Ccircle cx='334' cy='270' r='2'/%3E%3Ccircle cx='378' cy='314' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Light wallpaper (BLACK strokes) */
+body.theme-warm .tech-bg::after{
+  mix-blend-mode: normal;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560'%3E%3Cg fill='none' stroke='black' stroke-opacity='.98' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- controller --%3E%3Cg transform='translate(46 58)'%3E%3Cpath d='M92 84c22-18 66-18 88 0 10 8 18 26 22 50 4 24-4 44-22 52-14 7-26-2-38-14-10-10-22-16-34-16s-24 6-34 16c-12 12-24 21-38 14-18-8-26-28-22-52 4-24 12-42 22-50z'/%3E%3Cpath d='M98 134h26M111 121v26'/%3E%3Ccircle cx='166' cy='122' r='6'/%3E%3Ccircle cx='184' cy='134' r='6'/%3E%3C/g%3E%3C!-- microchip --%3E%3Cg transform='translate(320 54)'%3E%3Crect x='46' y='46' width='120' height='120' rx='12'/%3E%3Crect x='82' y='82' width='48' height='48' rx='8'/%3E%3Cpath d='M46 26v20M72 26v20M98 26v20M124 26v20M150 26v20M166 26v20'/%3E%3Cpath d='M46 166v20M72 166v20M98 166v20M124 166v20M150 166v20M166 166v20'/%3E%3Cpath d='M26 46h20M26 72h20M26 98h20M26 124h20M26 150h20M26 166h20'/%3E%3Cpath d='M166 46h20M166 72h20M166 98h20M166 124h20M166 150h20M166 166h20'/%3E%3C/g%3E%3C!-- desktop monitor --%3E%3Cg transform='translate(52 318)'%3E%3Crect x='40' y='40' width='180' height='112' rx='12'/%3E%3Cpath d='M94 172h72'/%3E%3Cpath d='M116 152v20'/%3E%3C/g%3E%3C!-- laptop --%3E%3Cg transform='translate(320 330)'%3E%3Crect x='40' y='44' width='170' height='98' rx='10'/%3E%3Cpath d='M20 158h210'/%3E%3Cpath d='M62 146h126'/%3E%3C/g%3E%3C!-- book --%3E%3Cg transform='translate(258 214)'%3E%3Cpath d='M40 42h84a18 18 0 0 1 18 18v104a18 18 0 0 0-18-18H40z'/%3E%3Cpath d='M40 42v104a18 18 0 0 1 18 18h84'/%3E%3Cpath d='M64 72h50'/%3E%3Cpath d='M64 98h62'/%3E%3C/g%3E%3C!-- tiny circuit --%3E%3Cg opacity='.9'%3E%3Cpath d='M270 270h64'/%3E%3Cpath d='M334 270v44'/%3E%3Cpath d='M334 314h44'/%3E%3Ccircle cx='270' cy='270' r='2'/%3E%3Ccircle cx='334' cy='270' r='2'/%3E%3Ccircle cx='378' cy='314' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@keyframes techFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+@keyframes techDrift{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(-180px, 90px, 0)}
+}
+
+/* =========================================================
+   TOP BAR + TABS
+   ========================================================= */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(16px);
+  background: var(--topbar);
+  border-bottom:1px solid var(--stroke);
+}
+.header{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px 6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.header h1{font-size:22px;margin:0;letter-spacing:.2px}
+.header .mini{color:var(--muted);font-size:13px;margin-top:2px}
+.theme-toggle{
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+  color:var(--text);
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+}
+.tabs{
+  max-width:1100px;
+  margin:auto;
+  padding:8px 12px 14px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  white-space:nowrap;
+}
+.tab.active{
+  color:var(--text);
+  background:var(--accentSoft);
+  border-color:var(--accentStroke);
+}
+
+/* =========================================================
+   SCROLL SNAP SECTIONS
+   ========================================================= */
+.scroller{
+  height:calc(100vh - 104px);
+  overflow-y:auto;
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
+}
+section{
+  min-height:calc(100vh - 104px);
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 16px;
+}
+.container{
+  width:min(1100px,100%);
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:22px;
+  padding:26px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+h2{margin:0 0 10px;font-size:28px;letter-spacing:.2px}
+h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:4px;
+  margin-top:10px;
+  background:var(--accent);
+  border-radius:999px;
+}
+p,li{color:var(--muted);line-height:1.7}
+ul{margin:10px 0 0 18px}
+
+/* photo card */
+.photo img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid var(--stroke);
+  filter:saturate(.95) contrast(1.02);
+}
+
+/* buttons */
+.btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:12px 16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  color:var(--text);
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+  transition:transform .15s ease, background .2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+body.theme-warm .btn:hover{background:rgba(180,135,34,0.18)}
+
+/* right-side highlight cards glow */
+.card.highlight{
+  position:relative;
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,0.05) inset;
+}
+.card.highlight::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:24px;
+  background: radial-gradient(420px 220px at 20% 10%, var(--glow), transparent 60%);
+  filter: blur(12px);
+  opacity:.9;
+  pointer-events:none;
+}
+body.theme-warm .card.highlight{
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.14),
+    0 0 0 1px rgba(0,0,0,0.06) inset;
+}
+body.theme-warm .card.highlight::before{opacity:.75}
+
+/* contact buttons */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:12px;
+}
+.contact-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.08);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:900;
+  transition:transform .15s ease, background .2s ease;
+}
+.contact-btn:hover{
+  transform:translateY(-2px);
+  background:var(--accentSoft);
+  border-color:var(--accentStroke);
+}
+.contact-btn.wide{grid-column:span 2}
+.contact-icon{
+  width:30px;height:30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.15);
+  font-weight:900;
+}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);filter:blur(6px);transition:.6s ease}
+.reveal.show{opacity:1;transform:none;filter:none}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+  .photo img{height:240px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-btn.wide{grid-column:auto}
+}
+</style>
+</head>
+
+<body class="theme-royal">
+<div class="tech-bg" aria-hidden="true"></div>
+
+<div class="topbar">
+  <div class="header">
+    <div>
+      <h1>Suhas Panuganti</h1>
+      <div class="mini">MS CS @ ODU • AI / Data / Cyber / Systems</div>
+    </div>
+    <button class="theme-toggle" id="themeBtn">Theme</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-id="s1">About</button>
+    <button class="tab" data-id="s2">Education</button>
+    <button class="tab" data-id="s3">Projects</button>
+    <button class="tab" data-id="s4">Experience</button>
+    <button class="tab" data-id="s5">Skills & Certifications</button>
+    <button class="tab" data-id="s6">Contact</button>
+  </div>
+</div>
+
+<div class="scroller" id="scroller">
+
+  <!-- ABOUT -->
+  <section id="s1">
+    <div class="container">
+      <div class="card reveal">
+        <h2>About</h2>
+        <p><b>Greetings,</b></p>
+        <p>
+          I’m <b>Suhas Panuganti</b>.This is my personal portfolio—feel free to explore and learn more about my work.
+          If you’d like to connect, you’ll find my details in the <b>Contact</b> section.
+        </p>
+        <p>
+          I am actively seeking opportunities for a <b>full-time role</b> or a <b>PhD</b>.
+          My areas of interest include <b>Full-Stack Development</b> and <b>SDET</b>,
+          as well as <b>Generative AI</b>, <b>Machine Learning</b>, and <b>Web & API Development</b>.
+        </p>
+      </div>
+
+      <!-- PHOTO (kept) -->
+      <div class="card photo reveal">
+        <img
+          src="https://raw.githubusercontent.com/suhaspanuganti/suhaspanuganti.github.io/main/gradday_ccrop.jpg"
+          alt="Suhas Panuganti"
+          onerror="this.onerror=null; this.src='gradday_ccrop.jpg';"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="s2">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Education</h2>
+        <p>
+          I completed my undergraduate studies in <b>India</b> and then moved to the <b>United States</b>
+          to pursue my <b>Master’s</b>.
+        </p>
+        <a class="btn" href="education.html">Education</a>
+      </div>
+
+      <div class="card highlight reveal">
+        <p><b>Quick view:</b></p>
+        <ul>
+          <li>M.S. Computer Science — Old Dominion University</li>
+          <li>B.E. Computer Science — MVSR (Osmania University)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="s3">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Projects</h2>
+        <p>
+          From my undergraduate years to today, I’ve built several projects that highlight my strengths and interests.
+          Feel free to explore them.
+        </p>
+        <a class="btn" href="projects.html">Projects</a>
+      </div>
+
+      <div class="card highlight reveal">
+        <p><b>Highlights:</b></p>
+        <ul>
+          <li>GenAI Screen Reader (accessibility + summarization)</li>
+          <li>CiteSeerX Repository Sitemap Generator (automation + scale)</li>
+          <li>ML/Vision prototypes (deployment mindset)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="s4">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Experience</h2>
+        <ul>
+          <li>Cybersecurity Technical Trainer — TeK Certify</li>
+          <li>Graduate Research & Administrative Assistant — ODU</li>
+          <li>Graduate Teaching Assistant — ODU</li>
+          <li>TRIO Student Tutor • Career Development Social Media Assistant</li>
+        </ul>
+        <a class="btn" href="experience.html">Experience</a>
+      </div>
+
+      <div class="card highlight reveal">
+        <p><b>Core theme:</b> hands-on work with measurable outcomes.</p>
+        <p>Strong in teaching, automation, and systems thinking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="s5">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Skills & Certifications</h2>
+        <p>A categorized breakdown of my technical skills and certifications.</p>
+        <a class="btn" href="skills.html">Skills & Certifications</a>
+      </div>
+
+      <div class="card highlight reveal">
+        <p><b>Quick view:</b></p>
+        <ul>
+          <li>Python • Java • C/C++ • C# • Go • Rust</li>
+          <li>React • Angular • Flask/Django • HTML/CSS/JS</li>
+          <li>SQL • Spark • Elasticsearch • Linux</li>
+          <li>Cybersecurity labs • networking • tooling</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="s6">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Contact</h2>
+        <p>Direct links—no forms, no friction.</p>
+
+        <div class="contact-grid">
+          <a class="contact-btn" href="https://github.com/suhaspanuganti" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">⌘</span> GitHub
+          </a>
+
+          <a class="contact-btn" href="https://www.linkedin.com/in/suhaskumar2308" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">in</span> LinkedIn
+          </a>
+
+          <a class="contact-btn wide" href="mailto:suhasp232002@gmail.com">
+            <span class="contact-icon">@</span> Email
+          </a>
+        </div>
+      </div>
+
+      <div class="card highlight reveal">
+        <p><b>Email:</b> opens Gmail/Outlook depending on your device settings.</p>
+        <p><b>GitHub/LinkedIn:</b> opens in a new tab.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const scroller = document.getElementById("scroller");
+  const tabs = Array.from(document.querySelectorAll(".tab"));
+
+  tabs.forEach(t=>{
+    t.addEventListener("click", ()=>{
+      const el = document.getElementById(t.dataset.id);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  const observer = new IntersectionObserver((entries)=>{
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
+    if(!visible) return;
+
+    tabs.forEach(t=>t.classList.toggle("active", t.dataset.id === visible.target.id));
+
+    visible.target.querySelectorAll(".reveal").forEach((el,i)=>{
+      setTimeout(()=>el.classList.add("show"), 90 + i*120);
+    });
+  },{root: scroller, threshold: [0.55,0.7,0.85]});
+
+  document.querySelectorAll("section").forEach(s=>observer.observe(s));
+
+  document.getElementById("themeBtn").addEventListener("click", ()=>{
+    document.body.classList.toggle("theme-royal");
+    document.body.classList.toggle("theme-warm");
+  });
+</script>
+
+</body>
+</html>

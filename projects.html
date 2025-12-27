@@ -1,0 +1,656 @@
+<!DOCTYPE html later we could go like gen Ai cash flowi have a research paper type looking repotr non published but i dont think it will be even published. next add this one 
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suhas Panuganti | Projects</title>
+
+<style>
+/* =========================================================
+   THEMES (Maroon <-> Intel Blue)
+   ========================================================= */
+body.theme-maroon{
+  --bg1:#0f0b10;
+  --bg2:#1a0e14;
+  --accent:#8d2444;
+  --accentSoft:rgba(141,36,68,0.16);
+  --accentStroke:rgba(141,36,68,0.46);
+  --topbar: rgba(14,10,14,.72);
+  --chipGlow: rgba(0,160,255,0.35);
+  --chipPulse: rgba(0,190,255,0.55);
+}
+
+body.theme-intel{
+  --bg1:#08111f;
+  --bg2:#0b1a33;
+  --accent:#0071c5;
+  --accentSoft:rgba(0,113,197,0.16);
+  --accentStroke:rgba(0,113,197,0.46);
+  --topbar: rgba(8,12,20,.72);
+  --chipGlow: rgba(0,160,255,0.45);
+  --chipPulse: rgba(0,205,255,0.65);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+:root{
+  --card:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.66);
+  --stroke:rgba(255,255,255,0.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color: var(--text);
+  background:
+    radial-gradient(900px 520px at 18% 12%, var(--accentSoft), transparent 60%),
+    radial-gradient(900px 520px at 82% 20%, rgba(95,140,255,0.10), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  overflow:hidden;
+}
+
+/* Matte grain */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity:.07;
+  pointer-events:none;
+}
+
+/* =========================================================
+   ANIMATED CHIP BACKGROUND (blue running lights)
+   ========================================================= */
+.chip-bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  opacity:1;
+  overflow:hidden;
+}
+
+/* circuit grid */
+.chip-bg::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,160,255,0.06) 0 2px, transparent 2px 46px),
+    repeating-linear-gradient(0deg,  rgba(0,160,255,0.05) 0 2px, transparent 2px 46px);
+  transform: rotate(-10deg);
+  filter: blur(0.2px);
+  opacity:0.80;
+}
+
+/* moving scan glow */
+.chip-bg::after{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  background:
+    radial-gradient(600px 280px at 10% 30%, var(--chipGlow), transparent 60%),
+    radial-gradient(560px 260px at 80% 60%, rgba(0,120,255,0.20), transparent 60%),
+    linear-gradient(120deg, transparent 0%, rgba(0,220,255,0.10) 45%, transparent 60%);
+  animation: scanMove 7.5s linear infinite;
+  mix-blend-mode: screen;
+  opacity:1;
+}
+
+@keyframes scanMove{
+  0%   { transform: translate(-12%, -6%) rotate(-6deg); }
+  50%  { transform: translate(10%, 8%) rotate(-6deg); }
+  100% { transform: translate(-12%, -6%) rotate(-6deg); }
+}
+
+/* pulsing nodes (flow lights) */
+.node{
+  position:absolute;
+  width:6px;height:6px;border-radius:50%;
+  background: var(--chipPulse);
+  box-shadow: 0 0 18px var(--chipPulse);
+  opacity:0.0;
+  animation: pulse 2.8s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%{opacity:0; transform:scale(0.6)}
+  35%{opacity:0.85; transform:scale(1.15)}
+  70%{opacity:0.25; transform:scale(0.9)}
+  100%{opacity:0; transform:scale(0.6)}
+}
+
+/* =========================================================
+   TOP BAR + SUBNAV
+   ========================================================= */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(16px);
+  background: var(--topbar);
+  border-bottom:1px solid var(--stroke);
+}
+
+.header{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px 6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.header h1{
+  font-size:20px;
+  margin:0;
+  letter-spacing:.2px;
+}
+
+.header .mini{
+  color: var(--muted);
+  font-size: 13px;
+  margin-top:2px;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.btn-pill{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  text-decoration:none;
+}
+.btn-pill.accent{
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+}
+
+.tabs{
+  max-width:1100px;
+  margin:auto;
+  padding:8px 12px 14px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+
+.tab{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.05);
+  color:var(--muted);
+  padding:8px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:800;
+  white-space:nowrap;
+}
+.tab.active{
+  color:var(--text);
+  background:var(--accentSoft);
+  border-color:var(--accentStroke);
+}
+
+/* =========================================================
+   SCROLL SNAP SECTIONS
+   ========================================================= */
+.scroller{
+  height:calc(100vh - 104px);
+  overflow-y:auto;
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth;
+}
+
+section{
+  min-height:calc(100vh - 104px);
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 16px;
+}
+
+.container{
+  width:min(1100px,100%);
+  display:grid;
+  grid-template-columns:1.65fr 1fr;
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:22px;
+  padding:26px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+
+h2{
+  margin:0 0 10px;
+  font-size:26px;
+  letter-spacing:.2px;
+}
+h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:4px;
+  margin-top:10px;
+  background:var(--accent);
+  border-radius:999px;
+}
+
+p,li{color:var(--muted);line-height:1.7}
+ul{margin:10px 0 0 18px}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.badge{
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  padding:7px 10px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:12px;
+  opacity:.92;
+}
+.badge.accent{
+  border-color:var(--accentStroke);
+  background:var(--accentSoft);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  padding:12px 16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  color:var(--text);
+  border:1px solid var(--accentStroke);
+  background:var(--accentSoft);
+  transition: transform .15s ease, background .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+
+.small{font-size:13px;color:var(--muted)}
+.gh{width:18px;height:18px;flex:0 0 18px;display:inline-block}
+.gh svg{width:18px;height:18px;display:block;fill:currentColor}
+
+.media{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.media-box{
+  border:1px dashed rgba(255,255,255,0.22);
+  border-radius:18px;
+  padding:16px;
+  background:rgba(255,255,255,0.04);
+}
+.media-box b{color:var(--text)}
+.note{
+  border-left:4px solid var(--accent);
+  padding-left:12px;
+  margin-top:12px;
+}
+
+/* reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(6px);
+  transition:.6s ease;
+}
+.reveal.show{opacity:1;transform:none;filter:none}
+
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body class="theme-maroon">
+
+<!-- animated chip background -->
+<div class="chip-bg" aria-hidden="true">
+  <!-- nodes (fixed positions) -->
+  <span class="node" style="left:10%; top:22%; animation-delay:0.2s"></span>
+  <span class="node" style="left:22%; top:64%; animation-delay:1.1s"></span>
+  <span class="node" style="left:38%; top:38%; animation-delay:0.6s"></span>
+  <span class="node" style="left:52%; top:72%; animation-delay:1.6s"></span>
+  <span class="node" style="left:66%; top:28%; animation-delay:0.9s"></span>
+  <span class="node" style="left:78%; top:58%; animation-delay:1.9s"></span>
+  <span class="node" style="left:88%; top:34%; animation-delay:0.4s"></span>
+</div>
+
+<div class="topbar">
+  <div class="header">
+    <div>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="actions">
+      <button class="btn-pill accent" id="themeBtn">Theme</button>
+      <a class="btn-pill" href="index.html">← Back</a>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-id="p1">GenAI Screen Reader</button>
+    <button class="tab" data-id="p2">GenAI Cash Flow</button>
+    <button class="tab" data-id="p3">Rental Platform</button>
+    <button class="tab" data-id="p4">CiteSeerX Migration</button>
+    <button class="tab" data-id="p5">Other Projects</button>
+  </div>
+</div>
+
+<div class="scroller" id="scroller">
+
+  <section id="p1">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Generative AI Screen Reader</h2>
+        <p>
+           An accessibility-focused tool that summarizes and reads web content for visually impaired users.
+           Designed to deliver clean, consistent output across diverse web layouts.
+        </p>
+
+
+        <div class="badges">
+          <span class="badge accent">GenAI</span>
+          <span class="badge">NLP</span>
+          <span class="badge">OCR</span>
+          <span class="badge">TTS</span>
+          <span class="badge">Accessibility</span>
+        </div>
+
+        <ul>
+          <li>Designed for quick “get the point” summaries of real webpages</li>
+          <li>Reduces clutter by prioritizing semantic content</li>
+          <li>Perfect spot to embed your demo video next</li>
+        </ul>
+
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/suhaspanuganti/Projects">
+          <span class="gh" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27
+            1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+            0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          View Project (GitHub)
+        </a>
+
+        <div class="note small">
+      
+        </div>
+      </div>
+
+      <div class="card media reveal">
+        <div class="media-box">
+          <b>Demo Video (next)</b>
+          <div class="small">We’ll add an embedded player once you share the video file/link.</div>
+        </div>
+        <div class="media-box">
+          <b>Best hook</b>
+          <div class="small">“Turns noisy webpages into clean summaries — optimized for accessibility.”</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="p2">
+    <div class="container">
+      <div class="card reveal">
+        <h2>GenAI for Cash Flow Intelligence</h2>
+        <p>
+           Independent study research exploring how Generative AI can support cash-flow analysis in FinTech.
+           The work was documented as a research-style academic report (not published).
+        </p>
+
+
+        <div class="badges">
+          <span class="badge accent">GenAI</span>
+          <span class="badge">FinTech</span>
+          <span class="badge">Research</span>
+          <span class="badge">NLP</span>
+        </div>
+
+        <ul>
+          <li>Focus: extracting insights + summarizing cash-flow behavior</li>
+          <li>Deliverable: research-style report (non-published)</li>
+        </ul>
+
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/suhaspanuganti/Projects">
+          <span class="gh" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27
+            1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+            0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          View Project (GitHub)
+        </a>
+      </div>
+
+      <div class="card reveal">
+        <p><b>Position it simply:</b></p>
+        <p class="small">“Independent study report on applying GenAI to cash-flow insight extraction in FinTech.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="p3">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Rental Convenience Website (Privacy-first)</h2>
+        <p>
+          A privacy-first rental platform concept that connects seekers and property owners without exposing
+          personal contact details. Secure in-app messaging is used for communication.
+        </p>
+
+
+        <div class="badges">
+          <span class="badge accent">Web</span>
+          <span class="badge">Privacy-first</span>
+          <span class="badge">Auth</span>
+          <span class="badge">DB</span>
+          <span class="badge">Maps</span>
+        </div>
+
+        <ul>
+          <li><b>Landing:</b> Seeker / Owner entry options</li>
+          <li><b>Listings:</b> address + owner name + photos + map pin (no contact exposed)</li>
+          <li><b>Messaging:</b> login required → in-app encrypted chat</li>
+          <li><b>Backend plan:</b> GitHub Pages + Supabase/Firebase</li>
+        </ul>
+
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/suhaspanuganti/Projects">
+          <span class="gh" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27
+            1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+            0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          View Project (GitHub)
+        </a>
+
+        <div class="note small">Status: in progress — shown as concept overview.</div>
+      </div>
+
+      <div class="card reveal">
+        <p><b>Why it’s strong:</b></p>
+        <ul>
+          <li>Privacy-first architecture</li>
+          <li>Role-based workflows</li>
+          <li>Realistic free hosting plan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="p4">
+    <div class="container">
+      <div class="card reveal">
+        <h2>CiteSeerX Migration + Sitemaps</h2>
+        <p>
+          Large-scale archival migration + automated sitemap/index generation to improve discovery.
+          Built around reliability, repeatable workflows, and scale.
+        </p>
+
+        <div class="badges">
+          <span class="badge accent">Python</span>
+          <span class="badge">Linux</span>
+          <span class="badge">Elasticsearch</span>
+          <span class="badge">Automation</span>
+        </div>
+
+        <ul>
+          <li>Automation tooling for large PDF collections</li>
+          <li>Indexing / sitemap generation using checksums</li>
+          <li>Focus on reproducible and trackable workflows</li>
+        </ul>
+
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/suhaspanuganti/Projects">
+          <span class="gh" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27
+            1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+            0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          View Project (GitHub)
+        </a>
+      </div>
+
+      <div class="card reveal">
+        <p><b>One-liner:</b></p>
+        <p class="small">“Large-scale PDF migration + automated sitemap/index generation for archival discovery.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="p5">
+    <div class="container">
+      <div class="card reveal">
+        <h2>Other Projects</h2>
+        <p>Kept brief on purpose.</p>
+
+        <div class="badges">
+          <span class="badge accent">ML</span>
+          <span class="badge">Fog Computing</span>
+          <span class="badge">Computer Vision</span>
+        </div>
+
+        <ul>
+          <li><b>Fog-based Healthcare Load Balancing:</b> sensor vitals pipeline + clustering + alerts (Twilio SMS).</li>
+          <li><b>Face Mask Detection (CNN):</b> real-time OpenCV camera detection + notifications.</li>
+        </ul>
+
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/suhaspanuganti/Projects">
+          <span class="gh" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+            -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27
+            1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+            0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          View Projects (GitHub)
+        </a>
+      </div>
+
+      <div class="card reveal">
+        <p><b>Next upgrade:</b></p>
+        <ul>
+          <li>Embed your demo video in section 1</li>
+          <li>Add 1 screenshot per featured project</li>
+          <li>Replace “View Project” links with specific repos once you sort them</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  /* Tabs scroll */
+  const scroller = document.getElementById("scroller");
+  const tabs = Array.from(document.querySelectorAll(".tab"));
+  tabs.forEach(t=>{
+    t.addEventListener("click", ()=>{
+      const el = document.getElementById(t.dataset.id);
+      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  /* Observer: active tab + reveal */
+  const observer = new IntersectionObserver((entries)=>{
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b)=> b.intersectionRatio - a.intersectionRatio)[0];
+    if(!visible) return;
+
+    tabs.forEach(t=>t.classList.toggle("active", t.dataset.id === visible.target.id));
+
+    visible.target.querySelectorAll(".reveal").forEach((el,i)=>{
+      setTimeout(()=>el.classList.add("show"), 80 + i*110);
+    });
+  },{root: scroller, threshold: [0.55,0.7,0.85]});
+
+  document.querySelectorAll("section").forEach(s=>observer.observe(s));
+
+  /* Theme button: Maroon <-> Intel Blue */
+  document.getElementById("themeBtn").addEventListener("click", ()=>{
+    document.body.classList.toggle("theme-maroon");
+    document.body.classList.toggle("theme-intel");
+  });
+</script>
+
+</body>
+</html>
