@@ -429,11 +429,13 @@ ul{margin:10px 0 0 18px}
              playsinline
              preload="metadata"
              style="width:100%; border-radius:14px; border:1px solid rgba(255,255,255,0.14); background:rgba(0,0,0,0.25);">
-       <source src="YOUR_VIDEO_FILENAME.mp4" type="video/mp4">
+       <source src="nlp_project_output.mp4" type="video/mp4">
      </video>
 
   <div class="small" style="margin-top:10px;">
     (Muted loop preview — click to open full controls if needed.)
+     onclick="this.controls = true;"
+
   </div>
 </div>
 
@@ -668,17 +670,16 @@ ul{margin:10px 0 0 18px}
     document.body.classList.toggle("theme-intel");
   });
 
-   <script>
+  /* Force autoplay if browser blocks it (muted helps) */
   window.addEventListener("load", () => {
     const v = document.querySelector("#p1 video");
     if (v) v.play().catch(()=>{});
   });
 </script>
 
-</script>
-
 </body>
 </html>
+
 
 
 
