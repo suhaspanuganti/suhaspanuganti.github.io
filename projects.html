@@ -417,9 +417,26 @@ ul{margin:10px 0 0 18px}
 
       <div class="card media reveal">
         <div class="media-box">
-          <b>Demo Video (next)</b>
-          <div class="small">We’ll add an embedded player once you share the video file/link.</div>
-        </div>
+           <b>Demo Video</b>
+           <div class="small" style="margin:8px 0 10px;">
+             Quick demo of the GenAI Screen Reader output.
+           </div>
+
+           <video
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="metadata"
+             style="width:100%; border-radius:14px; border:1px solid rgba(255,255,255,0.14); background:rgba(0,0,0,0.25);">
+       <source src="YOUR_VIDEO_FILENAME.mp4" type="video/mp4">
+     </video>
+
+  <div class="small" style="margin-top:10px;">
+    (Muted loop preview — click to open full controls if needed.)
+  </div>
+</div>
+
         <div class="media-box">
           <b>Best hook</b>
           <div class="small">“Turns noisy webpages into clean summaries — optimized for accessibility.”</div>
@@ -654,4 +671,5 @@ ul{margin:10px 0 0 18px}
 
 </body>
 </html>
+
 
